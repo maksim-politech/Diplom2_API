@@ -26,9 +26,6 @@ public class UpdateUserTest {
 
         accessToken = response.jsonPath().getString("accessToken");
         System.out.println(response.body().asString());
-
-        try {Thread.sleep(1000);}
-        catch (Exception e){}
     }
 
     @Test
