@@ -36,9 +36,7 @@ public class CreateUserTest {
                 .statusCode(200);
         accessToken = response.jsonPath().getString("accessToken");
 
-        try {Thread.sleep(1000);}
-        catch (Exception e){}
-        }
+    
 
 
     @Test
