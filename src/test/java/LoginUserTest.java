@@ -27,9 +27,6 @@ public class LoginUserTest {
 
         accessToken = response.jsonPath().getString("accessToken");
         correctEmail = response.jsonPath().getString("user.email");
-
-        try {Thread.sleep(1000);}
-        catch (Exception e){}
     }
 
     @Test
