@@ -42,9 +42,6 @@ public class OrdersTest {
 
         ingredient1 = ingredients.jsonPath().getString("data[0]._id");
         ingredient2 = ingredients.jsonPath().getString("data[1]._id");
-
-        try {Thread.sleep(1000);}
-        catch (Exception e){}
     }
 
     @Test
