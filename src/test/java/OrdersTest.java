@@ -31,14 +31,12 @@ public class OrdersTest {
                         .post("/api/auth/register");
 
         accessToken = response.jsonPath().getString("accessToken");
-        System.out.println(response.body().asString());
 
         Response ingredients =
                 given()
                         .header("Content-type", "application/json")
                         .get("/api/ingredients");
 
-        System.out.println(ingredients.body().asString());
 
         ingredient1 = ingredients.jsonPath().getString("data[0]._id");
         ingredient2 = ingredients.jsonPath().getString("data[1]._id");
@@ -62,7 +60,6 @@ public class OrdersTest {
                 .body("success", equalTo(true))
                 .and()
                 .statusCode(200);
-        System.out.println(response.body().asString());
     }
 
     @Test
@@ -82,7 +79,6 @@ public class OrdersTest {
                 .body("success", equalTo(true))
                 .and()
                 .statusCode(200);
-        System.out.println(response.body().asString());
     }
 
 
@@ -102,7 +98,6 @@ public class OrdersTest {
                 .body("success", equalTo(false))
                 .and()
                 .statusCode(400);
-        System.out.println(response.body().asString());
     }
 
     @Test
@@ -120,7 +115,6 @@ public class OrdersTest {
                         .post("/api/orders");
         response.then()
                 .statusCode(500);
-        System.out.println(response.body().asString());
     }
 
     @Test
@@ -154,7 +148,6 @@ public class OrdersTest {
                 .and()
                 .statusCode(200);
 
-        System.out.println(orderListResponse.body().asString());
     }
 
     @Test
@@ -168,7 +161,6 @@ public class OrdersTest {
                 .body("success", equalTo(false))
             .and()
                 .statusCode(401);
-        System.out.println(orderListResponse.body().asString());
     }
 
     @After
