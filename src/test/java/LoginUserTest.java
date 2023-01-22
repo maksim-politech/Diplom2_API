@@ -41,7 +41,6 @@ public class LoginUserTest {
                 .body("accessToken", notNullValue())
                 .and()
                 .statusCode(200);
-        System.out.println(response.body().asString());
     }
 
     @Test
@@ -68,7 +67,6 @@ public class LoginUserTest {
                 .body("success", equalTo(false))
                 .and()
                 .statusCode(401);
-        System.out.println(response2.body().asString());
     }
 
 
