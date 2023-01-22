@@ -25,7 +25,6 @@ public class UpdateUserTest {
                         .post("/api/auth/register");
 
         accessToken = response.jsonPath().getString("accessToken");
-        System.out.println(response.body().asString());
     }
 
     @Test
@@ -45,7 +44,6 @@ public class UpdateUserTest {
                     .body("user.name", equalTo("NEWМакс"))
                     .and()
                    .statusCode(200);
-        System.out.println(response.body().asString());
     }
 
     @Test
@@ -66,7 +64,6 @@ public class UpdateUserTest {
 
         response2.then().assertThat()
                 .body("success", equalTo(true));
-        System.out.println(response.body().asString());
     }
 
     @Test
@@ -82,7 +79,6 @@ public class UpdateUserTest {
                 .body("message", equalTo("You should be authorised"))
                 .and()
                 .statusCode(401);
-        System.out.println(response.body().asString());
     }
 
     @Test
@@ -96,7 +92,6 @@ public class UpdateUserTest {
                         .patch("/api/auth/user");
         response.then()
                 .statusCode(200); ///дОЛЖЕН БЫТЬ 403 СТАТУС КОД ПО ДОКУМЕНТАЦИИ, НО ВЫДАЕТ 200
-        System.out.println(response.body().asString());
     }
 
 
